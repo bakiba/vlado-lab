@@ -18,6 +18,6 @@
      name: docker-ce
      state: present
   - name: Enable container logging to syslog
-    docker_container:
-     name: vlado-lab
-     log_driver: syslog
+    copy:
+     src: 'daemon.json'
+     dest: '/etc/docker/daemon.json'
